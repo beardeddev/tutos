@@ -6,9 +6,9 @@ namespace TodoListApp.Controllers
 {
     [ApiController]
     [Route("/api/v1/[controller]")]
-    public class ToDoListController : ApiControllerBase<ToDoList, int>
+    public class ToDoListsController : ApiControllerBase<ToDoList, int>
     {
-        public ToDoListController(IToDoListRepository repository)
+        public ToDoListsController(IToDoListRepository repository)
             : base(repository)
         {
             
