@@ -1,1 +1,1 @@
-# tutos
+Set of projects to experiment and learn something new and interesting
