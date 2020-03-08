@@ -45,7 +45,7 @@ namespace TodoListApp.Controllers
         public virtual IActionResult Update(TKey id, TEntity entity)
         {
             TEntity result = repository.Update(entity);
-            return NoContent();
+            return Ok(result);
         }
 
         [HttpDelete("{id}")]

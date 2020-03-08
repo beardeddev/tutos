@@ -2,8 +2,12 @@ using ToDoListApp.Models;
 
 namespace ToDoListApp.Repositories
 {
-    public interface ToDoItemRepository : IRepository<ToDoItem, int>
+    public class ToDoItemRepository : Repository<ToDoItem, int>, IToDoItemRepository
     {
-        
+        public ToDoItemRepository(ToDoDbContext context)
+            : base(context)
+        {
+
+        }
     }
 }

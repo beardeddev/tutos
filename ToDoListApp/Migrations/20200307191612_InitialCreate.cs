@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace TodoListApp.Migrations
+namespace ToDoListApp.Migrations
 {
     public partial class InitialCreate : Migration
     {
@@ -37,7 +37,7 @@ namespace TodoListApp.Migrations
                         column: x => x.ToDoListId,
                         principalTable: "ToDoLists",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ToDoListApp.Models;
 
-namespace TodoListApp.Migrations
+namespace ToDoListApp.Migrations
 {
     [DbContext(typeof(ToDoDbContext))]
     partial class ToDoDbContextModelSnapshot : ModelSnapshot
@@ -58,9 +58,10 @@ namespace TodoListApp.Migrations
 
             modelBuilder.Entity("ToDoListApp.Models.ToDoItem", b =>
                 {
-                    b.HasOne("ToDoListApp.Models.ToDoList", null)
+                    b.HasOne("ToDoListApp.Models.ToDoList", "ToDoList")
                         .WithMany("Items")
-                        .HasForeignKey("ToDoListId");
+                        .HasForeignKey("ToDoListId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

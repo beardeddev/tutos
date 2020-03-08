@@ -9,5 +9,7 @@ namespace ToDoListApp.Models
         [Required, MaxLength(128)]
         public string Title { get; set; }
         public bool IsDone { get; set; }
+
+        public ToDoList ToDoList { get; set; }
     }
 }

@@ -18,6 +18,11 @@ namespace ToDoListApp.Models
                 entity.Property(x => x.Title).IsRequired().HasMaxLength(128);
             });
 
+            modelBuilder.Entity<ToDoList>()
+                .HasMany(x => x.Items)
+                .WithOne(x => x.ToDoList)
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<ToDoItem>(entity =>
             {
                 entity.Property(x => x.Title).IsRequired().HasMaxLength(256);
